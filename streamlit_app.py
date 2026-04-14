@@ -13,10 +13,7 @@ st.title("IPL Match Winner Predictor")
 team1 = st.text_input("Team 1")
 team2 = st.text_input("Team 2")
 venue = st.text_input("Venue")
-month = st.selectbox("Month", [
-    "January","February","March","April","May","June",
-    "July","August","September","October","November","December"
-])
+
 
 if st.button("Predict"):
     # Create input dict (VERY IMPORTANT)
@@ -31,9 +28,7 @@ if st.button("Predict"):
         
     if f"venue_{venue}" in input_dict:
         input_dict[f"venue_{venue}"] = 1
-        
-    if f"month_{month}" in input_dict:
-        input_dict[f"month_{month}"] = 1
+
 
     input_df = pd.DataFrame([input_dict])
 
